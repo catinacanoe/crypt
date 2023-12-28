@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
 check() {
-    if ! [ -d .crypt/ ]; then
-        echo "not a crypt repository, exiting ..."
-        exit 1
-    fi
+    while true; do
+	[ "$PWD" == "/" ] && break
+	[ -d .crypt/ ] && return
+	cd ..
+    done
+
+    echo "not a crypt repository, exiting ..."
+    exit 1
 }
 
