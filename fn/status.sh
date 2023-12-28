@@ -12,7 +12,7 @@ function status() {
     local gitstat="$(git status 2>&1)"
 
     if [[ "$gitstat" == *"Your branch is ahead"* ]] || \
-       [[ "$gitstat" == *"Untracked"* ]] || \
+       [[ "$gitstat" == *"Untracked files"* ]] || \
        [[ "$gitstat" == *"Changes to be committed"* ]] || \
        [[ "$gitstat" == *"Changes not staged"* ]]; then
 	echo && echo "this crypt is ahead of remote" && return
