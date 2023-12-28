@@ -36,6 +36,17 @@ vim:ft=markdown
   ```
   In this case, I would set the environment variable `$CRYPT_RECIPIENT` to `thisiswhatyouneed@mail.com` (the string enclosed in `<angle brackets>` on the `uid` line)
 
+## NixOS
+
+   I personally use nixos, and there is a really nice way to install stuff like this. With `home.nix` use:
+   `home.packages = [ (pkgs.writeShellScriptBin "crypt" "/path/to/repo/crypt/main.sh $@") ];`
+
+   And with `configuration.nix`, use:
+   `environment.systemPackages = [ (pkgs.writeShellScriptBin "crypt" "/path/to/repo/crypt/main.sh $@") ];`
+   
+   To set the environment variable, you can put this into your `home.nix`:
+   `home.sessionVariables.CRYPT_RECIPIENT = "thisiswhatyouneed@mail.com";`
+
 # Usage
 
   Similar to `git`, you can just run `crypt` with an argument which is basically just a subcommand that dictates what happens.
