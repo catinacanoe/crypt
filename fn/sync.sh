@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function sync() {
-    stat="$(status)"
+    stat="$(status | tail -n 1)"
 
     case "$stat" in
         *"behind"*) echo "crypt is behind, pulling" && decrypt ;;
