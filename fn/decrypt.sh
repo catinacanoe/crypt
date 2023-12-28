@@ -22,7 +22,6 @@ function decrypt_item() {
 }
 
 function decrypt() {
-    # delete existing data
     cd .crypt/data/
 
     local index="$(cat ../index)"

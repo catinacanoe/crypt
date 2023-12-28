@@ -35,7 +35,7 @@ function encrypt_item() {
 }
 
 function encrypt() {
-    rm -rf .crypt/old/ > /dev/null
+    rm -rf .crypt/old/ > /dev/null 2>&1
     mv .crypt/data/ .crypt/old/
     mkdir -v .crypt/data/
 
