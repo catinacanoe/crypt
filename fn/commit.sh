@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 function commit() {
-    cd .crypt/
+    [ "$1" == "nocd" ] || cd .crypt/
     git add .
     git commit -m "from $(whoami)@$(hostname) at $(date +"%H:%M on %a %d.%m.%Y")"
-    cd ..
+    [ "$1" == "nocd" ] || cd ..
 }
