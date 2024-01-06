@@ -23,4 +23,7 @@ function init() {
     cd ..
 
     encrypt init
+
+    commit
+    push
 }
