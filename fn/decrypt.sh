@@ -22,6 +22,10 @@ function decrypt_item() {
 }
 
 function decrypt() {
+    rm -rf .crypt/backup/
+    mkdir -p .crypt/backup/
+    ls -a | grep -v '^\.$\|^\.\.$\|^\.crypt$' | xargs -I {} cp -r {} .crypt/backup/
+
     cd .crypt/data/
 
     local index="$(cat ../index)"

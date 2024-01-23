@@ -14,6 +14,7 @@ function init() {
     mkdir data
     echo "index" > .gitignore
     echo "old/" >> .gitignore
+    echo "backup/" >> .gitignore
     git init
     git branch -M main
     git remote add origin "$remote"

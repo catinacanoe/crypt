@@ -54,5 +54,4 @@ function encrypt() {
 
     echo "INFO: begin encryption"
     encrypt_item . "$1"
-    rm -rfv .crypt/old/
 }
