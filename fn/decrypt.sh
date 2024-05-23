@@ -16,7 +16,7 @@ function decrypt_item() {
 	echo "decrypting '$stem'"
 	rm -rf "../../$stem"
 	mkdir -p "../../$(dirname "$stem")"
-	gpg --quiet -o "../../$stem" -d ../temp.gpg
+	gpg --pinentry-mode loopback --quiet -o "../../$stem" -d ../temp.gpg
 	rm ../temp.gpg
     fi
 }
